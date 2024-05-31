@@ -4,7 +4,7 @@ tmp.*
 *.json
 AssBarrage.code-workspace
 # 生成的字幕文件所在文件夹
-AssData/
+AssData/*.ass
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
