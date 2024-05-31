@@ -1,3 +1,8 @@
+# 个人配置
+
+tmp.*
+*.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
