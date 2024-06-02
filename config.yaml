@@ -1,0 +1,31 @@
+# 弹幕显示时间（从出现到结束持续时间） ms 这里使用了 腾讯接口 弹幕 切割时间
+barrage_duration_time: 30000
+# 两个弹幕之间间隔时间 ms ，时间越长弹幕之间越不容易重叠
+barrage_delay_time: 5000
+# 弹幕轨道数（行数）
+barrage_line_num: 6
+# 弹幕首个轨道距离顶部距离，建议不要小于10，potplay小于10之后会在次字幕中显示不全
+barrage_height_from_top: 10
+# 弹幕单个轨道高度
+barrage_line_height: 15
+# 弹幕轨道之间间隔
+barrage_line_interval: 15
+# 每行字幕模板：左对齐，淡入淡出
+subtitle_line_template: 'Dialogue: 0,$barrage_start_time,$barrage_end_time,Barrage1920,,0,0,0,,{\fad(500,500)\move(2020,$barrage_start_y,-100,$barrage_start_y)}$barrage_content'
+# 淡入淡出 字幕版本
+subtitle_line_template_v1: 'Dialogue: 0,$barrage_start_time,$barrage_end_time,Barrage1920,,0,0,0,,{\fad(1000,1000)\move(1920,$barrage_start_y,0,$barrage_start_y)}$barrage_content'
+# 腾讯广告位置弹幕过滤
+tx_ad_filter:
+  # 开启过滤 true 关闭过滤false 
+  status: false
+  # 广告时间位置列表，下面是庆余年 广告位置(片头、片中) 单位 毫秒, [广告开始时间，广告结束时间，广告持续时间]
+  # ad_times: [[97000, 145000, 48000],[1050000, 1140000, 90000]]
+  ad_times: [[97000, 145000, 48000]] 
+# 腾讯视频过滤器，用于过滤 预告片 或其它符合条件 切片，减少视频信息
+tx_video_filter:
+  # 开启过滤 true 关闭过滤false 
+  status: true
+  # 视频标题 包含 指定内容 的片段都会被过滤
+  title_filter: "预告"
+  # 小于当前 时间 秒 的视频都将会过滤 下面是5分钟
+  time_filter: 300
